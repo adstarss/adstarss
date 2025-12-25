@@ -1,12 +1,48 @@
-- 👋 Hi, I’m @adstarss
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+# 智能健康管理平台与饮食推荐系统集成方案
 
-<!---
-adstarss/adstarss is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+这个仓库包含了如何将**智能健康管理平台**和**智能健康饮食推荐系统**进行集成的完整技术架构方案。
+
+## 📋 文档
+
+详细的技术架构和实现方案请查看：[ARCHITECTURE.md](./ARCHITECTURE.md)
+
+## 🎯 系统概述
+
+### 系统A：智能健康管理平台
+- 健康数据跟踪（步数、心率、血压、睡眠等）
+- 个性化健康建议
+- 社区功能（用户分享健康经验）
+
+### 系统B：智能健康饮食推荐系统
+- 饮食记录
+- 智能食谱推荐
+- 营养分析和报告
+
+## 🔗 核心集成点
+
+系统将健康数据作为饮食推荐的输入，实现：
+- 基于运动量的食谱热量匹配
+- 基于健康指标的个性化推荐
+- 基于饮食记录的健康建议优化
+
+## 🛠️ 技术栈
+
+- **后端框架**：Spring Boot 3.x
+- **数据库**：MySQL/PostgreSQL + Redis
+- **推荐引擎**：规则引擎 + 机器学习（可选）
+- **安全认证**：Spring Security + JWT
+
+## 📖 使用说明
+
+请参阅 [ARCHITECTURE.md](./ARCHITECTURE.md) 文档，其中包含：
+- 详细的系统架构设计
+- 数据模型设计
+- 核心功能实现思路
+- 推荐算法逻辑
+- 技术实现细节
+- 需要考虑的补充方面
+- 实施路线图
+
+## 👤 作者
+
+@adstarss
