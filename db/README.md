@@ -102,5 +102,6 @@ spring:
 
 - 密码字段 `password_hash` 存储 **BCrypt** 哈希，原始明文不落库。
 - `raw_data` 字段保留原始设备数据用于回溯，数据展示时需脱敏。
+- `date_of_birth` 代替静态 `age` 字段，年龄通过 `TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE())` 动态计算，避免数据过期。
 - 验证码、限流计数器等短生命周期数据由 **Redis** 管理，不在此建表。
 - 健康建议内容（尤其 `MEDICAL` 类型）须附加免责声明，不构成医疗建议。

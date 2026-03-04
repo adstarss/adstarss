@@ -8,12 +8,12 @@ USE health_platform;
 -- ============================================================
 -- 用户（密码均为 BCrypt("password123")，仅供演示）
 -- ============================================================
-INSERT INTO users (username, email, password_hash, age, gender, height_cm, weight_kg, health_goal, role, email_verified)
+INSERT INTO users (username, email, password_hash, date_of_birth, gender, height_cm, weight_kg, health_goal, role, email_verified)
 VALUES
-    ('alice',  'alice@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  28, 'FEMALE', 165.0, 58.5,  'MAINTAIN',       'USER',  TRUE),
-    ('bob',    'bob@example.com',    '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  35, 'MALE',   178.0, 85.0,  'LOSE_WEIGHT',    'USER',  TRUE),
-    ('carol',  'carol@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  22, 'FEMALE', 160.0, 50.0,  'BUILD_MUSCLE',   'USER',  FALSE),
-    ('admin',  'admin@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  30, 'MALE',   175.0, 70.0,  'IMPROVE_HEALTH', 'ADMIN', TRUE);
+    ('alice',  'alice@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  '1998-03-15', 'FEMALE', 165.0, 58.5,  'MAINTAIN',       'USER',  TRUE),
+    ('bob',    'bob@example.com',    '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  '1991-07-22', 'MALE',   178.0, 85.0,  'LOSE_WEIGHT',    'USER',  TRUE),
+    ('carol',  'carol@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  '2004-11-08', 'FEMALE', 160.0, 50.0,  'BUILD_MUSCLE',   'USER',  FALSE),
+    ('admin',  'admin@example.com',  '$2a$12$KIX/B1YEzBPCBCTiinCMi.eG0iFpEjGVfvJL8nMxUr9T.7R0vxQTK',  '1996-05-30', 'MALE',   175.0, 70.0,  'IMPROVE_HEALTH', 'ADMIN', TRUE);
 
 -- ============================================================
 -- 用户画像

@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS users (
     password_hash   VARCHAR(255)      NOT NULL,
     phone           VARCHAR(20)       UNIQUE,
     -- 个人档案
-    age             SMALLINT          CHECK (age BETWEEN 1 AND 150),
+    date_of_birth   DATE              CHECK (date_of_birth <= CURRENT_DATE),
     gender          gender_type,
     height_cm       NUMERIC(5,2)      CHECK (height_cm > 0),
     weight_kg       NUMERIC(5,2)      CHECK (weight_kg > 0),
@@ -361,7 +361,7 @@ CREATE TABLE IF NOT EXISTS recipe_recommendations (
     user_id     BIGINT             NOT NULL REFERENCES users   (id) ON DELETE CASCADE,
     recipe_id   BIGINT             NOT NULL REFERENCES recipes (id) ON DELETE CASCADE,
     strategy    rec_strategy_type  NOT NULL DEFAULT 'RULE',
-    score       NUMERIC(5,4)       CHECK (score BETWEEN 0 AND 1),
+    score       NUMERIC(6,5)       CHECK (score BETWEEN 0 AND 1),
     reason      VARCHAR(500),
     feedback    feedback_type,
     created_at  TIMESTAMPTZ        NOT NULL DEFAULT NOW()

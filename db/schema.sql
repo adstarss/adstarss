@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS users (
     password_hash VARCHAR(255) NOT NULL                COMMENT 'BCrypt 密码哈希',
     phone         VARCHAR(20)  DEFAULT NULL            COMMENT '手机号（可选，唯一）',
     -- 个人档案
-    age           TINYINT UNSIGNED DEFAULT NULL        COMMENT '年龄',
+    date_of_birth DATE             DEFAULT NULL        COMMENT '出生日期（用于动态计算年龄）',
     gender        ENUM('MALE','FEMALE','OTHER') DEFAULT NULL COMMENT '性别',
     height_cm     DECIMAL(5,2) DEFAULT NULL            COMMENT '身高（cm）',
     weight_kg     DECIMAL(5,2) DEFAULT NULL            COMMENT '体重（kg）',
@@ -352,7 +352,7 @@ CREATE TABLE IF NOT EXISTS recipe_recommendations (
     recipe_id   BIGINT NOT NULL                 COMMENT '推荐食谱ID',
     strategy    ENUM('RULE','COLLABORATIVE','CONTENT','HYBRID','AI')
                 NOT NULL DEFAULT 'RULE'         COMMENT '推荐策略',
-    score       DECIMAL(5,4) DEFAULT NULL       COMMENT '推荐得分（0-1）',
+    score       DECIMAL(6,5) DEFAULT NULL       COMMENT '推荐得分（0-1）',
     reason      VARCHAR(500) DEFAULT NULL       COMMENT '推荐原因（简短说明）',
     -- 用户反馈
     feedback    ENUM('ADOPTED','IGNORED','DISLIKED') DEFAULT NULL COMMENT '用户反馈',

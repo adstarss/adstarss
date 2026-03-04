@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS users (
     email           VARCHAR(100)    NOT NULL,
     password_hash   VARCHAR(255)    NOT NULL,
     phone           VARCHAR(20)     DEFAULT NULL,
-    age             TINYINT         DEFAULT NULL,
+    date_of_birth   DATE         DEFAULT NULL,
     gender          VARCHAR(10)     DEFAULT NULL,        -- MALE / FEMALE / OTHER
     height_cm       DECIMAL(5,2)    DEFAULT NULL,
     weight_kg       DECIMAL(5,2)    DEFAULT NULL,
@@ -263,7 +263,7 @@ CREATE TABLE IF NOT EXISTS recipe_recommendations (
     user_id     BIGINT       NOT NULL,
     recipe_id   BIGINT       NOT NULL,
     strategy    VARCHAR(15)  NOT NULL DEFAULT 'RULE',
-    score       DECIMAL(5,4) DEFAULT NULL,
+    score       DECIMAL(6,5) DEFAULT NULL,
     reason      VARCHAR(500) DEFAULT NULL,
     feedback    VARCHAR(10)  DEFAULT NULL,   -- ADOPTED / IGNORED / DISLIKED
     created_at  TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP,
